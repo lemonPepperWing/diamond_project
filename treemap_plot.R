@@ -34,4 +34,3 @@ treemap(car_count,
         overlap.labels=1,          
         palette="Dark2",         #RColorBrewer::display.brewer.all()
         align.labels= c("center", "center")) 
-> 
