@@ -16,14 +16,12 @@ mpg <- mpg %>%
          manufacturer = as_factor(manufacturer)) %>%
   relocate(class, .after = model)
 
-# create a table to see where each category matches up to manufacturer
+# create a table to see where each category matches up
 table(mpg$class, mpg$manufacturer)
 
 # create a tibble with the selected count
-car_count <- mpg %>% 
-  count(class, manufacturer)
+car_count <- mpg %>% count(class, manufacturer)
 
-# create a treemap with visual options.
 treemap(car_count,
         index=c("class","manufacturer"),
         vSize="n",
@@ -35,6 +33,5 @@ treemap(car_count,
         fontface.labels=c(2,2),  
         overlap.labels=1,          
         palette="Dark2",         #RColorBrewer::display.brewer.all()
-        align.labels=         
-          c("center", "center")) 
-
+        align.labels= c("center", "center")) 
+> 
