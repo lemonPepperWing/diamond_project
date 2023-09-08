@@ -7,6 +7,9 @@ library(treemap)
 # check out the dataset.
 glimpse(mpg)
 
+# remove all duplicates from the tibble
+distinct(mpg, .keep_all = TRUE)
+
 # change variables used  for plotting into factors
 mpg <- mpg %>% 
   mutate(class = as_factor(class),
@@ -26,7 +29,7 @@ treemap(car_count,
         vSize="n",
         type="index",
         title="Car Manufacturer by Class Size",
-        fontsize.title = 12,        
+        fontsize.title = 16,        
         fontsize.labels=c(15,11),   
         fontcolor.labels="black",  
         fontface.labels=c(2,2),  
